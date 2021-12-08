@@ -1,0 +1,482 @@
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/Inter-VariableFont_slnt,wght.ttf)
+  }
+  @font-face {
+    font-family: Staatliches;
+    src: url(../fonts/Staatliches-Regular.ttf)
+  }
+
+  @font-face {
+    font-family: Yanone Kaffeesatz;
+    src: url(../fonts/YanoneKaffeesatz-VariableFont_wght.ttf)
+  }
+   
+html, body {
+    margin:0;
+    padding:0;
+}
+  
+body {
+    display: grid;
+    grid-template-columns: minmax(auto,230px) auto;
+    grid-template-rows: 148px 110px auto;
+    grid-template-areas: 'n h' 'n a' 'n m'; 
+}
+
+body > nav {
+    grid-area: n;
+    color: #FFFFFF;
+    background-color: #023436;
+    display: flex;
+    flex-direction: column;
+}
+  
+body > header {
+    grid-area: h;
+    background-color: #037971;
+}
+
+body > aside {
+    grid-area: a;
+    background-color: #049A8F;
+}
+
+body > main > #map {
+    grid-area: m;
+    height: 100%;
+}
+
+body > main  {
+    background-color: #00BFB3;
+    grid-area: m;
+    height: 100%;
+}
+
+body > header > #temporada {
+    color: #95D4E8;
+    font-family: Staatliches;
+    background-color: 049A8F;
+    width: calc(100% / 2.1);
+    min-width: 200px;
+    /*font-size: min(38px, 5vw);*/
+    font-size: 38px;
+    margin-top: 0px;
+    padding-top:15px;
+    padding-left:15px;
+    padding-bottom:15px;
+    border-radius: 4px;
+}
+
+
+body > header > #nome {
+    font-family: Staatliches;
+    color: white;
+    /*font-size: min( min(38px, 5vw), 5vh);*/
+    font-size: min(38px, 5vw);
+    /*font-size: 38px;*/
+    position:relative;
+    display:inline;
+    left:15px;
+    bottom: min(15px, 2vw);
+}
+
+body > header > #pontos {
+    font-family: Staatliches;
+    color: white;
+    font-size: min(24px, 10vw);
+    /*font-size: 24px;*/
+    display:inline;
+    position:relative;
+    left:15px;
+    bottom: min(15px, 2vw);
+}
+
+body > header > img {
+    width:23px;
+    height: 19px; 
+    position:relative;
+    left:15px;
+    bottom: min(15px, 2vw);
+    display:inline;
+}
+    
+body > nav > img {
+    width: 102px;
+    height: 64px;
+    position: relative;
+    top:min(60px, 10vh);
+    margin-right: auto;
+    margin-left: 26%;
+    /*margin-bottom: 62px;*/
+    margin-bottom: min(62px, 10vh);
+}
+
+body > nav > #slogan {
+    font-family: Yanone Kaffeesatz;
+    color: #03B5AA;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    position:relative;
+    margin-bottom: min(80px, 5vh);
+   
+}
+
+aside > section#historyselect {
+   margin-top: 34px;
+   margin-left: min(40px, 5vw);
+}
+
+aside > section#historyselect > #history {
+    background-color: #03B5AA;
+    color: white;
+    height: 40px;
+    width: 100px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: left;
+    text-indent:1em;
+    border: none;
+    font-family: Inter;
+    margin-right:15px;
+    border:none;
+    outline: 0;
+}
+
+aside > section#historyselect > #season {
+    background-color: #03B5AA;
+    color: white;
+    height: 40px;
+    width: 128px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: left;
+    text-indent:1em;
+    border: none;
+    font-family: Inter;
+    border:none;
+    outline: 0;
+}
+
+#participationsHTMLpast > p#datap {
+    font-size: min(23px, 4vw);
+    color: white;
+    font-family: Staatliches;
+}
+
+#participationsHTMLfuture > p#datap {
+    font-size: min(23px, 4vw);
+    color: white;
+    font-family: Staatliches;
+}
+
+#participationsHTMLpast {
+    margin-top: 20px;
+    width:93.5%;
+    height: auto;
+    padding-bottom:25px;
+    padding-top: 20px;
+    border-radius: 4px;
+    margin-left: min(40px, 5vw);
+    background-color: #037971;
+}
+
+#participationsHTMLpast > p{
+    margin-left: 20px;
+    margin-right: 20px;
+    display:inline;
+    color: white;
+    font-family: Staatliches;
+    font-size: min(20px, 3vw);
+}
+
+#participationsHTMLfuture > p{
+    margin-left: 20px;
+    margin-right: 20px;
+    display:inline;
+    color: white;
+    font-family: Staatliches;
+    font-size: min(20px, 3vw);
+}
+
+#participationsHTMLfuture {
+    margin-top: 20px;
+    width:93.5%;
+    height: auto;
+    padding-bottom:25px;
+    padding-top: 10px;
+    border-radius: 4px;
+    margin-left: min(40px, 5vw);
+    background-color: rgba(3,121,113,0.5);
+    align-content: initial;
+}
+
+#participationsHTMLfuture > img {
+    margin-left:10px;
+    width: min(40px, 7vw);
+    height: min(42px, 8vw);
+    position:relative;
+    top:10px;
+}
+
+#participationsHTMLfuture > button >img#cancelicon {
+    width: min(22px, 8vw);
+    height: min(22px, 8vw);
+}
+
+#participationsHTMLfuture > button {
+    margin-left:10px;
+    border:none;
+    position:relative;
+    top:3px;
+    background-color: #00BFB3;
+    border-radius:4px;
+    width:auto;
+    height:auto;
+    padding:3px;
+}
+
+#participationsHTMLfuture > button:hover {
+    background-color: #00625B;
+}
+
+#participationsHTMLpast > img {
+    margin-left:13px;
+    width: min(35px, 6vw);
+    height:min(30px, 5vw);
+    position:relative;
+    top:6px;
+}
+
+
+/*MENU*/
+
+body > nav > section {
+    display:flex;
+    flex-direction: column;
+}
+
+.menu {
+    background-color: rgb(1, 51, 53) ;
+    color: white;
+    display: inline-block;
+    font-size: 17px;
+    font-family: Staatliches;
+    border:none;
+    padding-left: 13%;
+    text-align: left;
+}
+
+.menu_selected{
+    background: rgba(149, 212, 232, .15);
+    border: none;
+    color: rgb(139, 219, 243);
+    display: inline-block;
+    font-size: 18px;
+    font-family: Staatliches;
+    padding-left: 13%;
+    text-align: left;
+}
+
+.menu:hover{
+    background-color: rgb(11, 69, 71);
+    font-size: 18px;
+  }
+
+body > nav > section > button > img {
+    position: relative;
+    top:8px;
+}
+
+body > nav > section > button > p {
+    display: inline-block;
+    position:relative;
+    left:20px;
+}
+
+#homeicon {
+    height: 28px;
+    width: 33px;
+    position:relative;
+    left:2px;
+    top:7px;
+}
+
+#leaderboardicon {
+    height: 26px;
+    width: 29px;
+    position:relative;
+    left:6px;
+    top:6px;
+}
+
+#leaderboardp {
+    position:relative;
+    left:26px;
+}
+
+#logouticon {
+    height: 28px;
+    width: 34px;
+    position:relative;
+    left:2px;
+}
+
+#eventsicon {
+    height: 36px;
+    width: 35px;
+    position:relative;
+    top:11px;
+}
+/*FIM DO MENU*/
+
+/*CHECKBOX*/
+.container {
+    max-width: 420px;
+    font-family: Inter;
+    font-size: 10px;
+    position: relative;
+    top: 10px;
+    right:10px;
+}
+
+ul.ks-cboxtags li{
+  display: inline;
+}
+ul.ks-cboxtags li label{
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #023436;
+    border-radius: 100px;
+    margin: 5px 2px;
+}
+
+ul.ks-cboxtags li label {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::before {
+    display: inline-block;
+    font-family: Inter;
+    font-size: 10px;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    background-color: #023436;
+    color: #FFFFFF;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+ul.ks-cboxtags li input[type="radio"]:checked + label {
+    background-color: #023436;
+    color: #FFFFFF;
+}
+
+ul.ks-cboxtags li input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+
+
+/*FIM DA CHECKBOX*/
+
+/*POPUP*/
+#xiconp {
+    display:inline;
+    font-family: Inter;
+    font-size: 12px;
+    position:relative;
+    bottom:3px;
+    margin-left: 5px;
+}
+
+.sign:hover {
+    background-color: #03B5AA;
+}
+
+.sign {
+    background-color: #00BFB3;
+    color: white;
+    height: 40px;
+    width: 200px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+    border: none;
+    font-family: Inter;
+}
+
+.movetoharbor > img#caricon {
+    height: 18px;
+    width: 14px;
+}
+
+.movetoharbor > img#boaticon {
+    height: 16px;
+    width: 14px;
+}
+
+.movetoharbor{
+    position: relative;
+    top:2px;
+    left:10px;
+    border:none;
+    border-radius:4px;
+    padding:8px;
+}
+
+.movetoharbor:hover{
+    background-color: #e4e4e4;
+}
+
+/*WINDY API CSS*/
+#windy #bottom,
+#windy #embed-zoom {
+    display: none !important;
+}
+
+#windy #logo-wrapper {
+    top: initial;
+    bottom: 65px;
+}
+
+#windy #logo-wrapper #logo {
+    left: 80px;
+}
+
+/*Leaflet routine machine API CSS*/
+
+/*path.leaflet-interactive.animate {
+    stroke-dasharray: 1920;
+    stroke-dashoffset: 1920;
+    animation: dash 20s infinite linear;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+*/
+/* CUSTOM CONTROL */
+
+.leaflet-bar {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    border-radius: 5px;
+  }
+
+  .my-control {
+    background: #fff;
+    padding: 5px;
+    position:absolute;
+    right:100%;
+    z-index:1000;
+  }

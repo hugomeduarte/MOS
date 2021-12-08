@@ -1,0 +1,94 @@
+/*Obter temporada conforme o dia atual*/
+select * from temporada
+where CURRENT_DATE between temporada_datainicio and temporada_datafim;
+
+/*Obter pontos de uma temporada do utilizador*/
+select SUM(participacao_pontos) as Pontos, util_nome as Nome
+from participacao
+inner join utilizador
+on utilizador_id_FK=util_id
+inner join eventos
+on evento_id_FK=evento_id
+inner join temporada
+on temporada_id_FK=temporada_id
+where util_id = 1 and temporada_numero = 2
+group by Nome;
+
+/*Obter os eventos ativos*/
+select * from eventos
+inner join boia 
+on boia_id_fk = boia_id
+inner join porto
+on porto_id_fk = porto_id
+where evento_data > CURRENT_DATE;
+
+/*Obter boia ou porto e região*/
+select * from boia
+inner join regiao
+on regiao_id_fk=regiao_id
+where boia_id = 1;
+
+/*Obter utilizadores num evento*/
+select participacao_id,util_id, util_nome, util_admin, licenca_id, licenca_nome, licenca_profundidade from utilizador
+inner join licenca
+on licenca_id_fk=licenca_id
+inner join participacao
+on utilizador_id_FK=util_id
+where evento_id_fk = 19
+order by participacao_id;
+
+/*Obter utilizador e licença*/
+select * from utilizador
+inner join licenca
+on licenca_id_fk=licenca_id
+where util_id = 2;
+
+/*Obter vagas e lotação dum evento*/
+select coalesce((select count(*) from participacao
+inner join eventos
+on evento_id_FK = evento_id
+where evento_id_fk = 18
+group by evento_vagas),0);
+
+select evento_vagas from eventos
+where evento_id=18;
+
+/*Obter profundidade dum evento*/
+select * from eventos
+inner join boia
+on boia_id_fk = boia_id
+where evento_id = 12;
+
+/*Filtrar participações*/
+select * from participacao
+inner join eventos
+on evento_id_fk = evento_id
+inner join boia
+on boia_id_fk = boia_id
+where utilizador_id_fk = 2 and temporada_id_fk=2
+group by evento_data,evento_id,participacao_id,boia_id
+order by evento_data < CURRENT_DATE;
+
+/*Remover participação*/
+DELETE FROM participacao
+WHERE participacao_id = 26;
+
+/*Verificar se localização tem um evento ativo*/
+select count(*) from eventos
+inner join boia 
+on boia_id_fk = boia_id
+where boia_id = 5 and evento_data > CURRENT_DATE;
+
+/*Evento de uma participação*/
+select * from participacao
+inner join eventos
+on evento_id_fk = evento_id
+where participacao_id = 11;
+
+/*último evento*/
+SELECT max(evento_id)
+FROM eventos 
+LIMIT 1;
+
+select * from utilizador
+where util_id=2;

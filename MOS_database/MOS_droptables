@@ -1,0 +1,2 @@
+
+drop table utilizador , porto,boia,regiao , licenca, eventos , temporada , participacao cascade;

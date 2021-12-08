@@ -1,0 +1,89 @@
+create table utilizador (util_id serial PRIMARY KEY, 
+					 util_nome varchar(45) not null, /*nome do utilizador*/
+					 util_password varchar (45) not null,/*Password do utilizador*/ 	 
+			         util_admin boolean , /*utilizador é admin ou não*/
+				     licenca_id_FK int not null
+                    );
+									
+create table boia (boia_id serial PRIMARY KEY,
+					boia_nome varchar(45) not null, /*nome do local*/
+					boia_long decimal not null, /*longitude da localização*/
+					boia_lat decimal not null,/*latitude da localização*/
+					boia_profundidade int not null,/*profundidade da localização*/
+				   	boia_poluicao varchar(45) not null,
+				   	regiao_id_FK int not null
+					);
+						 
+create table porto (porto_id serial PRIMARY KEY,
+					porto_nome varchar(45) not null, /*nome do porto*/
+					porto_long decimal not null, /*longitude da localização*/
+					porto_lat decimal not null,/*latitude da localização*/
+					regiao_id_FK int not null
+				   );
+				   
+						 
+create table regiao (regiao_id serial PRIMARY KEY,
+					 regiao_nome varchar (45) not null,
+					 regiao_globalId int not null
+					);
+						 
+create table licenca (licenca_id serial PRIMARY KEY,
+					 licenca_nome varchar (45) not null, /*Titulo da licença*/
+					 licenca_profundidade int not null/*Profundidade da licença*/
+					 );	
+					 
+create table participacao(participacao_id serial PRIMARY KEY,
+						 participacao_validar boolean, /*Validar se participou no evento*/
+						 participacao_pontos int not null,/*pontos que devem ser atribuidos por participar*/
+						 utilizador_id_FK int not null,
+						 evento_id_FK int not null
+						 );					 
+					 				 
+									
+create table eventos (evento_id serial PRIMARY KEY,
+					 evento_data date not null, /*Data do evento*/
+					 evento_vagas int not null,
+					 boia_id_FK int not null,
+					 porto_id_FK int not null,
+					 temporada_id_FK int not null
+					 );
+					 
+create table temporada (temporada_id serial PRIMARY KEY,
+					   temporada_numero int not null, /*Numero da temporada*/
+					   temporada_datainicio date not null, /*Data de inicio da temporada*/
+					   temporada_datafim date not null /*Data do fim da temporada*/
+					   );
+
+					   			 				   
+alter table utilizador add constraint licenca_fk_utilizador
+            foreign key (licenca_id_FK) references licenca(licenca_id) 
+			ON DELETE NO ACTION ON UPDATE NO ACTION; 
+			
+alter table eventos add constraint boia_fk_eventos
+            foreign key (boia_id_FK) references boia(boia_id) 
+			ON DELETE NO ACTION ON UPDATE NO ACTION; 
+			
+alter table eventos add constraint porto_fk_eventos
+            foreign key (porto_id_FK) references porto(porto_id) 
+			ON DELETE NO ACTION ON UPDATE NO ACTION; 	
+			
+alter table eventos add constraint temporada_fk_eventos
+            foreign key (temporada_id_FK) references temporada(temporada_id) 
+			ON DELETE NO ACTION ON UPDATE NO ACTION; 
+			
+alter table participacao add constraint utilizador_fk_participacao
+            foreign key (utilizador_id_FK) references utilizador(util_id) 
+			ON DELETE NO ACTION ON UPDATE NO ACTION;
+			
+alter table participacao add constraint eventos_fk_participacao
+            foreign key (evento_id_FK) references eventos(evento_id) 
+			ON DELETE NO ACTION ON UPDATE NO ACTION;
+			
+alter table boia add constraint regiao_fk_boia
+            foreign key (regiao_id_FK) references regiao(regiao_id) 
+			ON DELETE NO ACTION ON UPDATE NO ACTION; 
+			
+alter table porto add constraint regiao_fk_porto
+            foreign key (regiao_id_FK) references regiao(regiao_id) 
+			ON DELETE NO ACTION ON UPDATE NO ACTION; 
+			 

@@ -1,0 +1,83 @@
+<html>
+
+<head>
+  <title>Man'o Sea</title>
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="javascripts/login.js"></script>
+</head>
+
+<body>
+
+<nav>
+  <img src="images/indexlogo.png">
+    <section id="menu">
+        <button class="selected">QUEM SOMOS</button>
+        <button class="unselected">O QUE FAZEMOS</button>
+        <button class="unselected">EXPLORAR</button>
+        <button class="unselected">CONTACTOS</button>
+        <button class="login" onclick="window.location.href='#modal'">LOGIN<img src="images/loginicon.png" id="loginicon"></button>
+    </section>
+    <section id="separador"></section>
+</nav>
+<main>
+  <section id="slogan">
+    <img src="images/turtleedit.png">
+    <p>We’re cleaning the sea, water you doing?</p>
+  </section>
+  <section id="blockoneleft">
+    <p class="staatlichesp">QUANTIDADE DE PLÁSTICO NO MAR</p>
+    <p class="interp">69420km</p>
+    <p class="staatlichesp">NÚMERO DE ESPÉCIES EM RISCO</p>
+    <p class="interp">220 espécies</p>
+    <p class="staatlichesp">Área total poluída</p>
+    <p class="interp">69MIL T</p>
+  </section>
+  <section id="blockoneright">
+    <p class="title">Ajude a diminuir estes números</p>
+    <p class="normalp">Se for portador de uma licença de mergulho, venha</p>
+    <p class="normalp">experimentar os nossos eventos numa aventura </p>
+    <p class="normalp">cheia de emoção, sentido de cooperação e uma</p>
+    <p class="normalp">prática socialmente gratificante!</p>
+    <button class="sign">REGISTE-SE</button>
+    <br><br>
+    <p class="jatemconta">Já tem uma conta? Clique</p>
+    <p class="aqui">AQUI</p>
+  </section>
+
+</main>
+<aside>
+  <br><br>
+  <p class="title">TORNE-SE UM administrador do man’o sea</p>
+  <section id ="blocktwoleft">
+    <img src="images/divemask.png">
+    <p class="normalp">Seja creditado pela FPAS e crie os seus</p>
+    <p class="normalp">eventos em áreas que requerem ajuda!</p>
+    <p class="normalp">O oceano não pode esperar mais!</p>
+  </section>
+  <section id ="blocktworight">
+    <img src="images/divebottle.png">
+    <p class="normalp">Faça parte de uma comunidade de entreajuda</p>
+    <p class="normalp">com um objetivo em comum!</p>
+    <p class="normalp">O oceano agradece toda a ajuda!</p>
+    <button class="sign2">REGISTE-SE</button>
+  </section>
+</aside>
+
+<div class="modal" id="modal" tabindex="-1">
+<a href="#" class="modal__overlay" aria-label="Fechar"></a>
+<div class="modal__content">
+<a href="#" class="modal__close" aria-label="Fechar">x</a>
+<div>
+  <input type="text" placeholder="Nome de utilizador" id="nome">
+  <input type="password" placeholder="Password" id="password">
+  <input type="button" id="loginbutton" onclick="login()" value="Login">
+  <p id="msg"></p>
+</div>
+</div>
+</div>
+
+</div>
+</body>
+
+</html>

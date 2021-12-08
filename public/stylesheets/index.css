@@ -1,0 +1,397 @@
+/*PÁGINA NÃO RESPONSIVA*/
+/*APENAS PARA DEMONSTRAÇÃO*/
+
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/Inter-VariableFont_slnt,wght.ttf)
+  }
+  @font-face {
+    font-family: Staatliches;
+    src: url(../fonts/Staatliches-Regular.ttf)
+  }
+
+  @font-face {
+    font-family: Yanone Kaffeesatz;
+    src: url(../fonts/YanoneKaffeesatz-VariableFont_wght.ttf)
+  }
+
+html, body {
+    margin:0;
+    padding:0;
+    background-color: #037971;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 140px 20px 434px 515px 600px;
+    grid-template-areas: 'n n' 'sep sep' 's s' 'b1 b1' 'a a'; 
+}
+
+body > nav {
+    grid-area: n;
+    background-color: #037971;
+}
+
+body > nav > img {
+    width: 132px;
+    height: 75px;
+    position: relative;
+    left:10%;
+    margin-top: 28px;
+    display:inline;
+}
+
+body > nav > section#menu {
+    display:inline;
+    position: relative;
+    left: 46%;
+}
+
+body > nav > #menu > .unselected {
+    background-color: rgba(149,212,232,0.3);
+    opacity:0.3;
+    color: white;
+    font-size: 17px;
+    font-family: Staatliches;
+    border:none;
+    padding-top: 85px;
+    padding-bottom: 13px;
+    width: 110px;
+    margin:-2px;
+}
+
+body > nav > #menu > .unselected:hover {
+    background-color: #2084A4;
+    font-size: 18px;
+}
+
+body > nav > #menu > .selected {
+    background-color: #2084A4;
+    color: white;
+    font-size: 18px;
+    font-family: Staatliches;
+    border:none;
+    padding-top: 85px;
+    padding-bottom: 15px;
+    width: 110px;
+    margin:-2px;
+}
+
+body > nav > #menu > .login {
+    position:absolute;
+    background-color: #05505A;
+    color: white;
+    font-size: 17px;
+    font-family: Staatliches;
+    border:none;
+    padding-top: 85px;
+    padding-bottom: 38px;
+    width: 110px;
+    margin:-3px;
+ 
+}
+
+body > nav > #menu > .login:hover {
+    background-color: #04424a;
+    font-size: 18px;
+}
+
+body > nav > section#separador {
+    grid-area: sep;
+    background-color: #2084A4;
+    height: 20px;
+    bottom: 15px;
+
+}
+
+body > main > section#slogan {
+    height:434px;
+    grid-area: s;
+}
+
+body > main > section#slogan > img{
+height: 434px;
+width: 100vw;
+}
+
+body > main > section#slogan > p{
+position: relative;
+text-align: center;
+  bottom: 280px;
+  left: 50%;
+  color: white;
+  font-family: Yanone Kaffeesatz;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+body > main > section#blockoneleft {
+    grid-area: b1;
+   position:relative;
+   left:20%;
+    margin-top:50px;
+   float:left;
+}
+
+.staatlichesp {
+    font-family: Staatliches;
+    color: #00BFB3;
+    font-size:34px;
+    
+}
+
+.interp {
+    font-family: Inter;
+    color: white;
+    font-size:27px;
+    position:relative;
+    bottom:20px;
+}
+
+body > main > section#blockoneright {
+    grid-area: b1;
+   position:relative;
+   left: 85%;
+   bottom:457px;
+   float:right;
+}
+
+.title {
+    font-family: Staatliches;
+    color: white;
+    font-size:38px;
+}
+
+.normalp{
+    font-family: Inter;
+    color: white;
+    font-size:19px;
+    margin-top:-19px;
+}
+
+.sign:hover {
+    background-color: #03B5AA;
+}
+
+.sign {
+    margin-top: 60px;
+    margin-left:75px;
+    background-color: #00BFB3;
+    color: white;
+    height: 45px;
+    width: 300px;
+    border-radius: 4px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    font-family: Staatliches;
+}
+
+.jatemconta {
+margin-left: 117px;  
+color:white;
+font-size:14px;
+display:inline;
+font-family: Inter;
+}
+
+.aqui {
+    color:#95D4E8;
+    font-size:14px;
+    display:inline;
+    font-family: Inter;
+    }
+
+body > aside {
+    grid-area: a;
+    background-color: #049A8F;
+}
+
+body > aside > p{
+    position: relative;
+    left:30%;
+}
+
+body > aside > section#blocktworight {
+    position:relative;
+   float:right;
+}
+
+body > aside > section#blocktwoleft > img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top:30px;
+    left:330px;
+}
+
+body > aside > section#blocktworight > img {
+    width: 100px;
+    height: 95px;
+    position: relative;
+    bottom:125px;
+    left:0px;
+}
+
+body > aside > section#blocktwoleft > p {
+    position: relative;
+    left:14%;
+    top:100px;
+}
+
+body > aside > section#blocktworight > p {
+    position: relative;
+    right:40%;
+    bottom:62px;
+}
+
+.sign2:hover {
+    background-color: #04857d;
+}
+
+.sign2 {
+    position: relative;
+    right:114%;
+    bottom: 20px;
+    background-color: #037971;
+    color: white;
+    height: 45px;
+    width: 300px;
+    border-radius: 4px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    font-family: Staatliches;
+}
+
+.modal {
+    display: none;
+    }
+     
+    .modal:target {
+    display: flex;
+    }
+
+    .modal {
+        text-align: left;
+        backdrop-filter: blur(2px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        }
+         
+        .modal:target {
+        justify-content: space-around;
+        align-items: center;
+        }
+         
+        .modal__overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        cursor: default;
+        }
+         
+        .modal__content {
+
+        position: relative;
+  
+        background-color: #049A8F;
+        padding:20px;
+        border-radius:4px;
+        }
+         
+        .modal__close {
+        color: white;
+        text-decoration: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 0.5rem;
+        display: inline-block;
+        font-family: Inter;
+        font-size: 14px;
+        }
+
+#loginicon {
+    position: relative;
+    width:20px;
+    height:20px;
+    left:5px;
+    top:3px;
+}
+
+div.modal__content > div > input#nome {
+    position: relative;
+    left: 23px;
+    -webkit-appearance: none;
+    width: 87%;
+    padding: 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: Inter;
+    color:#037971;
+    border:none;
+    outline: 0;
+    font-family: Inter;
+    font-size: 11px;
+}
+
+div.modal__content > div > input#password {
+    position: relative;
+    left: 23px;
+    -webkit-appearance: none;
+    width: 87%;
+    padding: 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: Inter;
+    color:#037971;
+    border:none;
+    outline: 0;
+    font-family: Inter;
+    font-size: 11px;
+}
+
+div.modal__content > div > input#loginbutton {
+    top:13px;
+    position: relative;
+    left: 23px;
+    -webkit-appearance: none;
+    width: 87%;
+    padding: 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: Inter;
+    color: white;
+    border:none;
+    outline: 0;
+    background-color: #00BFB3;
+    font-family: Staatliches;
+    font-size: 16px;
+}
+
+div.modal__content > div > input#loginbutton:hover {
+background-color: #037971;
+}
+
+div.modal__content > div > p#msg {
+    font-family: Inter;
+    font-size: 10px;
+    color:white;
+    position: relative;
+    left:33%;
+    }

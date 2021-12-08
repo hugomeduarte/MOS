@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <title>Man'o Sea</title>
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+  <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+  <link rel="stylesheet" href="/stylesheets/adminhome.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="javascripts/adminhome.js"></script>
+  <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+</head>
+
+<body>
+  
+  <header>
+    <h1 id="temporada"></h1>
+    <h1 id="nome"></h1>
+  </header>
+  
+  <nav>
+    <img src="images/logo.png">
+    <p id="slogan">We're cleaning the sea, water you doing?</p>
+    <section>
+      <button onclick="window.location.href='adminhome.html'"class = 'menu_selected'><img src="images/homeicon.png" id="homeicon"><p id="homep">Home</p></button>
+      <button onclick="window.location.href='eventhistory.html'" class='menu'><img src="images/eventsicon.png" id="eventsicon"><p id="eventsp">Events</p></button>
+      <button onclick="window.location.href='#leaderboard'" class='menu'><img src="images/leaderboardicon.png" id="leaderboardicon"><p id="leaderboardp">Leaderboard</p></button>
+      <button onclick="window.location.href='index.html'" class='menu'><img src="images/logouticon.png" id="logouticon"><p id="logoutp">Logout</p></button>
+    </section>
+  </nav>
+
+  <main>
+    <section id="form">
+    <select id="boia"></select>
+    <p id="eventexists"></p>
+    <select id="porto"></select>
+    <input type="date" id="date">
+    <input type="number" placeholder="Vagas (min: 5)" id="vacancies">
+    </section>
+    <section id="meteoinfo">
+      <img src="images/wave.png">
+      <p id="meteoinfop"></p>
+    </section>
+    <br>
+    <input type="button" value="Criar Evento" class="sign" onclick="create()">
+  </main>
+
+  <aside>
+    <div class="container">
+      <ul class="ks-cboxtags">
+        <li><input type="checkbox" id="baixo"><label for="baixo">Índice baixo</label></li>
+        <li><input type="checkbox" id="medio"><label for="medio">Índice médio</label></li>
+        <li><input type="checkbox" id="alto"><label for="alto">Índice alto</label></li>
+        <li><input type="checkbox" id="portos"><label for="portos">Portos</label></li>
+        <li><input type="radio" id="dez" name="radio"><label for="dez">10 km</label></li>
+        <li><input type="radio" id="vinteecinco" name="radio"><label for="vinteecinco">25 km</label></li>
+        <li><input type="radio" id="cinquenta" name="radio"><label for="cinquenta">50 km</label></li>
+      </ul>
+    </div>
+  </aside>
+
+  <div>
+    <section id="windy"></section>
+  </div>
+
+</body>
+
+</html>

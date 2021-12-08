@@ -1,0 +1,110 @@
+/*POPULATE*/
+insert into licenca (licenca_nome, licenca_profundidade) values ('Open Water', 15);
+insert into licenca (licenca_nome, licenca_profundidade) values ('Advanced', 30);
+insert into licenca (licenca_nome, licenca_profundidade) values ('Deep', 40);
+
+insert into regiao(regiao_nome, regiao_globalId) values('Lisboa',1111026);
+
+
+insert into boia (boia_nome,boia_long,boia_lat, boia_profundidade,boia_poluicao, regiao_id_FK) values ('River Gurara Popa',38.4117 ,-9.2166,23,'Bom',1);
+insert into boia (boia_nome,boia_long,boia_lat, boia_profundidade,boia_poluicao, regiao_id_FK) values ('River Gurara Proa',38.4113 ,-9.2177,28,'Bom',1);
+insert into boia (boia_nome,boia_long,boia_lat, boia_profundidade,boia_poluicao, regiao_id_FK) values ('P-39',38.4132 ,-9.2291,38,'Mau',1);
+insert into boia (boia_nome,boia_long,boia_lat, boia_profundidade,boia_poluicao, regiao_id_FK) values ('Pedra da Lagoa',38.5163 ,-9.2043,30,'Medio',1);
+insert into boia (boia_nome,boia_long,boia_lat, boia_profundidade,boia_poluicao, regiao_id_FK) values ('Jardim das Gorgónias',38.4347,-9.0641,17,'Bom',1);
+insert into boia (boia_nome,boia_long,boia_lat, boia_profundidade,boia_poluicao, regiao_id_FK) values ('Baleeira',38.416058,-9.189688,11,'Medio',1);
+insert into boia (boia_nome,boia_long,boia_lat, boia_profundidade,boia_poluicao, regiao_id_FK) values ('Gruta dos Pampos',38.4122,-9.2133,15,'Bom',1);
+insert into boia (boia_nome,boia_long,boia_lat, boia_profundidade,boia_poluicao, regiao_id_FK) values ('Baía da Armação',38.4396,-9.0605,10,'Bom',1);
+
+
+insert into porto (porto_nome,porto_long, porto_lat, regiao_id_FK) values ('Marina de Sesimbra',38.43603,-9.11542,1);
+insert into porto (porto_nome,porto_long, porto_lat, regiao_id_FK) values ('Marina de Oeiras',38.6763,-9.318607,1);
+
+
+insert into temporada(temporada_numero, temporada_datainicio, temporada_datafim) values (1, '2021-10-01', '2021-10-31');
+insert into temporada(temporada_numero, temporada_datainicio, temporada_datafim) values (2, '2021-11-01', '2022-01-31');
+
+
+
+
+insert into utilizador (util_nome, util_password, util_admin,licenca_id_FK) values('Frederico', '1234', false,1);
+insert into utilizador (util_nome, util_password, util_admin,licenca_id_FK) values('Hugo', '1234', false,3);
+insert into utilizador (util_nome, util_password, util_admin,licenca_id_FK) values('Miguel', '1234', false,2);
+insert into utilizador (util_nome, util_password, util_admin,licenca_id_FK) values('Jacinto', '1234', false,2);
+insert into utilizador (util_nome, util_password, util_admin,licenca_id_FK) values('José', '1234', false,3);
+insert into utilizador (util_nome, util_password, util_admin,licenca_id_FK) values('Gabriel', '1234', false,1);
+insert into utilizador (util_nome, util_password, util_admin,licenca_id_FK) values('Mamadu', '1234', true,3 );
+
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-10-01',5, 1,1,1);/*1 TEMPORADA */
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-10-02',10, 2,1, 1);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK,temporada_id_FK) values ('2021-10-03',5, 3,1, 1);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-10-04',10, 4,1, 1);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-10-05',5, 5,1, 1);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-10-06',10, 6,1, 1);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-10-07',5, 7,1, 1);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-10-08',5, 8,1, 1);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-12-26',5, 1,1, 2);/*2 TEMPORADA */
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-11-27',10, 2,1, 2);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-11-28',10, 3,1, 2);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-11-27',10, 4,2, 2);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-11-28',5, 5,1, 2);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-12-29',10, 6,1, 2);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-12-30',5, 7,1, 2);
+insert into eventos (evento_data,evento_vagas,boia_id_FK,porto_id_FK, temporada_id_FK) values ('2021-12-31',5, 8,1, 2);
+
+
+/*insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 1 ,1);/*1 TEMPORADA */
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 1 ,2);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 1 ,3);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 20, 1 ,4);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 2 ,5);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 2 ,6);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 10, 2 ,7);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 10, 2 ,8);/*2 TEMPORADA */
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 1 ,9);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 1 ,10);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 1 ,11);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 20, 1 ,12);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 2 ,13);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 2 ,14);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 10, 2 ,15);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 3 ,9);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 3 ,10);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 3 ,11);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 20, 3 ,12);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 4 ,13);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 4 ,14);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 10, 4 ,15);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 5 ,9);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 5 ,10);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 5 ,11);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 20, 5 ,12);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 6 ,13);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 6 ,14);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 10, 6 ,15)*/
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 7 ,10);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 7 ,11);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 10, 7 ,12);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 20, 7 ,14);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 7 ,15);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 7 ,16);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 7 ,9);
+
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 1 ,10);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 20, 1 ,12);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 2 ,14);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 10, 2 ,15);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 3 ,10);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 3 ,11);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 20, 3 ,12);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 4 ,14);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 10, 4 ,15);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 6 ,11);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 20, 6 ,12);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (false, 0, 6 ,14);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 7 ,13);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 6,13);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 5 ,13);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 4 ,13);
+insert into participacao (participacao_validar, participacao_pontos, utilizador_id_FK ,evento_id_FK) values (true, 50, 3 ,13);
+
+

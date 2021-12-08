@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>Man'o Sea</title>
+  <link rel="stylesheet" href="/stylesheets/home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="javascripts/eventhistory.js"></script>
+</head>
+
+<body>
+  
+  <header>
+    <p id="temporada"></p>
+    <p id="nome"></p>
+  </header>
+  
+  <nav>
+    <img src="images/logo.png">
+    <p id="slogan">We're cleaning the sea, water you doing?</p>
+    <section>
+      <button id="homebutton" class = 'menu'><img src="images/homeicon.png" id="homeicon"><p id="homep">Home</p></button>
+      <button onclick="window.location.href='eventhistory.html'" class='menu_selected'><img src="images/eventsicon.png" id="eventsicon"><p id="eventsp">Events</p></button>
+      <button onclick="window.location.href='#leaderboard'" class='menu'><img src="images/leaderboardicon.png" id="leaderboardicon"><p id="leaderboardp">Leaderboard</p></button>
+      <button onclick="window.location.href='index.html'" class='menu'><img src="images/logouticon.png" id="logouticon"><p id="logoutp">Logout</p></button>
+    </section>
+  </nav>
+
+  <aside>
+    <section id="historyselect">
+      <select name="history" id="history">
+        <option value="all">Todos</option>
+        <option value="past">Passados</option>
+        <option value="future">Futuros</option>
+      </select>
+      <select id="season"></select>
+    </section>
+  </aside>
+
+  <main>
+    <section id="historyfilter">
+  </section>
+  </main>
+
+</body>
