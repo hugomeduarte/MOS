@@ -165,21 +165,21 @@ window.onload = async function() {
 async function loadMeteo(buoys) {
     
     let meteo0 = await $.ajax({
-        url:"http://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day0.json",
+        url:"https://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day0.json",
         type: 'GET',
         dataType: 'json'
     });
     meteotoday = meteo0;
 
     let meteo1= await $.ajax({
-        url:"http://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day1.json",
+        url:"https://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day1.json",
         type: 'GET',
         dataType: 'json'
     });
     meteotomorrow = meteo1;
 
     let meteo2= await $.ajax({
-        url:"http://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day2.json",
+        url:"https://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day2.json",
         type: 'GET',
         dataType: 'json'
     });
