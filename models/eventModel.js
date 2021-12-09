@@ -92,6 +92,15 @@ module.exports.getAvailableEventsCountbyBuoyId = async function(buoyId) {
 
 module.exports.RemoveEventById = async function(id) {
     try {
+        let event ="select evento_data from eventos "+
+        "where evento_id = $1;";
+        let eventresult = await pool.query(event,[id]);
+
+        let todaydate = new Date().getDate();
+        let yesterdayeventdate = new Date(eventresult.rows[0].evento_data).getDate()-1;
+        if(todaydate === yesterdayeventdate) {
+            return { status:400, result: {err: "Não pode cancelar um dia antes do evento!"}};
+        }
         let sql ="DELETE FROM eventos "+
         "WHERE evento_id = $1;";
         let result = await pool.query(sql,[id]);
